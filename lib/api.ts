@@ -1,27 +1,24 @@
 import axios from 'axios';
 import type { Note, NotesResponse, NewNoteData} from "../types/note";
 
-const token = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
+// const token = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
 
-axios.defaults.baseURL = 'https://notehub-public.goit.study/api';
+const nextServer = axios.create({
+  baseURL: 'http://localhost:3000/api',
+  withCredentials: true, // дозволяє axios працювати з cookie
+});
 
 
 export const fetchNoteById = async (noteId: number): Promise<Note> => {
-  const response = await axios.get<Note>(`/notes/${noteId}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
+  const response = await nextServer.get<Note>(`/notes/${noteId}`, {
+
   });
 
   return response.data;
 };
 
 export const createNote = async (noteData: NewNoteData) => {
-  const response = await axios.post<Note>("/notes", noteData, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      
-    },
+  const response = await nextServer.post<Note>("/notes", noteData, {
   });
   return response.data;
   
@@ -29,10 +26,7 @@ export const createNote = async (noteData: NewNoteData) => {
 
 
 export const deleteNote = async (noteId: number) : Promise<Note>  => {
-  const response = await axios.delete(`/notes/${noteId}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
+  const response = await nextServer.delete(`/notes/${noteId}`, {
   });
   return response.data;
 };
@@ -46,21 +40,20 @@ export interface NotesParams {
 
 export const getNotes = async ({
   page,
-  perPage =12,
+  perPage = 12,
   search,
   tag,
 }: NotesParams): Promise<NotesResponse> => {
-  const response = await axios.get<NotesResponse>('/notes', {
+  const response = await nextServer.get<NotesResponse>('/notes', {
     params: {
       page,
       perPage,
       ...(search === "" ? {} : { search }),
-      ... (tag === "All" ? {} :{ tag }),
-    },
-    headers: {
-      Authorization: `Bearer ${token}`,
+      ...(tag === "All" ? {} : { tag }),
     },
   });
+
   return response.data;
 };
 
+export { nextServer };
