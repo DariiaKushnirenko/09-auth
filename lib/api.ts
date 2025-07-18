@@ -4,10 +4,9 @@ import type { Note, NotesResponse, NewNoteData} from "../types/note";
 // const token = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
 
 const nextServer = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL, // 
-  withCredentials: true, // дозволяє axios працювати з cookie
+  baseURL: 'https://09-auth-delta.vercel.app/',
+  withCredentials: true,
 });
-
 
 export const fetchNoteById = async (noteId: number): Promise<Note> => {
   const response = await nextServer.get<Note>(`/notes/${noteId}`, {
