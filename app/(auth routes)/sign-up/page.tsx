@@ -25,8 +25,9 @@ const SignUp = () => {
   return (
     <>
       <main className={css.mainContent}>
-        <h1 className={css.formTitle}>Sign up</h1>
         <form action={handleSubmit} className={css.form}>
+        <h1 className={css.formTitle}>Sign up</h1>
+        
           <div className={css.formGroup}>
             <label htmlFor="email">Email</label>
             <input
@@ -54,10 +55,8 @@ const SignUp = () => {
               Register
             </button>
           </div>
-
-          <p className={css.error}>Error</p>
         </form>
-        {error && <p>{error}</p>}
+        {error && <p className={css.error}>{error}</p>}
       </main>
     </>
   );
