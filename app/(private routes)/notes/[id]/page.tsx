@@ -1,5 +1,5 @@
 import { QueryClient } from "@tanstack/react-query";
-import { fetchNoteById } from "../../../lib/api";
+import { fetchNoteById } from "../../../../lib/api";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { Metadata } from "next";
 
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: NoteDetailsProps):Promise <Me
   const note = await fetchNoteById(parsedId);
   return {
     title: note.title,
-    description: note.content,
+    description: `${note.content.slice(0, 30)}...`,
      openGraph: {
         title: `Note: ${note.title}`,
         description: `${note.content.slice(0, 30)}...`,

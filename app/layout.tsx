@@ -8,16 +8,16 @@ import AuthProvider from '@/components/AuthProvider/AuthProvider';
 
 export const metadata: Metadata = {
   title: "Note Hub",
-  description: "your personal notepad",
+  description: "Your personal notepad",
   openGraph: {
     title: "Note Hub",
     description: "Your personal notepad",
-    url: "",
+    url: "https://08-zustand-sigma.vercel.app/",
     images: [
       {
         url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
-        width: "1200",
-        height: "630",
+        width: 1200,
+        height: 630,
         alt: "Note Hub Image",
       },
     ],
