@@ -16,6 +16,7 @@ export type User = {
 };
 
 export const register = async (data: RegisterRequest) => {
+   console.log('Sending register to:', nextServer.defaults.baseURL);
   const res = await nextServer.post<User>('/auth/register', data);
   return res.data;
 };
