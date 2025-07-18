@@ -4,7 +4,7 @@ import type { Note, NotesResponse, NewNoteData} from "../types/note";
 // const token = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
 
 const nextServer = axios.create({
-  baseURL: 'http://localhost:3000/api',
+  baseURL: 'https://notehub-api.goit.study',
   withCredentials: true, // дозволяє axios працювати з cookie
 });
 
