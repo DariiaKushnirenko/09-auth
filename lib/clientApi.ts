@@ -14,11 +14,15 @@ export type User = {
   updatedAt: Date;
 };
 
-export const register = async (data: RegisterRequest) => {
-   console.log('Sending register to:', nextServer.defaults.baseURL);
-  const res = await nextServer.post<User>('/auth/register', data);
-  return res.data;
-};
+// export const register = async (data: RegisterRequest) => {
+//    console.log('Sending register to:', nextServer.defaults.baseURL);
+//   const res = await nextServer.post<User>('/auth/register', data);
+//   return res.data;
+// };
+export const register = async (payload: RegisterRequest) => {
+  const { data } = await nextServer.post<User>(`/auth/register`, payload)
+  return data
+}
 
 export type LoginRequest = {
   email: string;
