@@ -8,42 +8,26 @@ const SignUp = () => {
   const router = useRouter();
   const [error, setError] = useState("");
 
-  // const handleSubmit = async (formData: FormData) => {
-  //   try {
-  //     const formValues = Object.fromEntries(formData) as RegisterRequest;
-  //     const res = await register(formValues);
-  //     if (res) {
-  //       router.push("/profile");
-  //     } else {
-  //       setError("Invalid email or password");
-  //     }
-  //   } catch (error) {
-  //     console.log("error", error);
-  //     setError("Invalid email or password");
-  //   }
-  // };
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-  event.preventDefault(); // зупиняє перезавантаження сторінки
-
-  const formData = new FormData(event.currentTarget);
-  const formValues = Object.fromEntries(formData) as RegisterRequest;
-
-  try {
-    const res = await register(formValues);
-    if (res) {
-      router.push('/profile');
-    } else {
-      setError('Invalid email or password');
-    }
-  } catch (error) {
-    console.log('error', error);
-    setError('Invalid email or password');
-  }
+  const handleSubmit = async (formData: FormData) => {
+    try {
+      const formValues = Object.fromEntries(formData) as RegisterRequest;
+      const res = await register(formValues);
+      if (res) {
+        router.push("/profile");
+      } else {
+        setError("Invalid email or password");
+      }
+    } catch (error) {
+      console.log("error", error);
+      setError("Invalid email or password");
+  
+  };
+ 
 };
   return (
     <>
       <main className={css.mainContent}>
-        <form onSubmit={handleSubmit} className={css.form}>
+        <form action={handleSubmit} className={css.form}>
         <h1 className={css.formTitle}>Sign up</h1>
 
           <div className={css.formGroup}>
@@ -74,7 +58,7 @@ const SignUp = () => {
             </button>
           </div>
         </form>
-        {error &&  <p className={css.error}>Error</p>}
+        {error &&  <p className={css.error}>Something went wrong</p>}
       </main>
     </>
   );
