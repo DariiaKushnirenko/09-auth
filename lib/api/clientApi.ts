@@ -7,6 +7,14 @@ export type RegisterRequest = {
   password: string;
 };
 
+export const checkSession = async (): Promise<boolean> => {
+  try {
+    await nextServer.get('/auth/session');
+    return true;
+  } catch {
+    return false;
+  }
+};
 
 export const register = async (payload: RegisterRequest) => {
   const { data } = await nextServer.post<User>(`/auth/register`, payload)

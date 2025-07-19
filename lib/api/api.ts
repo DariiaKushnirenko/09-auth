@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { Note, NotesResponse, NewNoteData} from '../../types/note'
+import type { Note,  NewNoteData} from '../../types/note'
 
 
 // const token = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
@@ -22,38 +22,6 @@ export const createNote = async (noteData: NewNoteData) => {
   });
   return response.data;
   
-};
-
-
-export const deleteNote = async (noteId: number) : Promise<Note>  => {
-  const response = await nextServer.delete(`/notes/${noteId}`, {
-  });
-  return response.data;
-};
-
-export interface NotesParams {
-  search: string;
-  tag?: string;
-  page: number;
-  perPage?: number;
-}
-
-export const getNotes = async ({
-  page,
-  perPage = 12,
-  search,
-  tag,
-}: NotesParams): Promise<NotesResponse> => {
-  const response = await nextServer.get<NotesResponse>('/notes', {
-    params: {
-      page,
-      perPage,
-      ...(search === "" ? {} : { search }),
-      ...(tag === "All" ? {} : { tag }),
-    },
-  });
-
-  return response.data;
 };
 
 export { nextServer };
