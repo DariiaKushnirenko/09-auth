@@ -88,3 +88,4 @@ export const deleteNote = async (noteId: number): Promise<Note> => {
   const response = await nextServer.delete(`/notes/${noteId}`);
   return response.data;
 };
+

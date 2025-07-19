@@ -83,7 +83,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { parse } from "cookie";
-import { checkSession } from "./lib/api/serverApi";
+import { checkServerSession } from "./lib/api/serverApi";
 
 const privateRoutes = ["/profile", "/notes", "/notes/filter"];
 const publicRoutes = ["/sign-in", "/sign-up"];
@@ -103,7 +103,7 @@ export async function middleware(request: NextRequest) {
 
   if (!accessToken) {
     if (refreshToken) {
-      const data = await checkSession();
+      const data = await checkServerSession();
       const setCookie = data.headers["set-cookie"];
 
       if (setCookie) {
@@ -156,7 +156,6 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // 🟡 Якщо маршрут не є ні публічним, ні приватним — пропускаємо далі
   return NextResponse.next();
 }
 
