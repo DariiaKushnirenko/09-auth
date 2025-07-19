@@ -1,6 +1,6 @@
 
 import NotesClient from './Notes.client';
-import { getNotes } from '../../../../../lib/api/clientApi';
+import { getServerNotes } from '../../../../../lib/api/serverApi';
 import { Metadata } from "next";
 import { Tag } from '@/types/note';
 
@@ -39,7 +39,7 @@ const NotesPageWithFilters = async ({ params }: generateMetadataProps) => {
   const { slug } = await params;
   const category = slug[0] 
 
-  const notes = await getNotes({
+  const notes = await getServerNotes({
     search: "",
     tag: category,
     page: 1,
