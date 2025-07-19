@@ -2,7 +2,7 @@
 import css from "./SignUpPage.module.css";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { register, RegisterRequest } from "@/lib/clientApi";
+import { register, RegisterRequest } from "../../../lib/api/clientApi";
 
 const SignUp = () => {
   const router = useRouter();

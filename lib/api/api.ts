@@ -1,10 +1,11 @@
 import axios from 'axios';
-import type { Note, NotesResponse, NewNoteData} from "../types/note";
+import type { Note, NotesResponse, NewNoteData} from '../../types/note'
+
 
 // const token = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
 
 const nextServer = axios.create({
-  baseURL: 'https://09-auth-delta.vercel.app',
+  baseURL: process.env.NEXT_PUBLIC_API_URL + '/api',
   withCredentials: true,
 });
 

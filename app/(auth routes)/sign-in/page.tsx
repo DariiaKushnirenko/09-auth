@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { login, LoginRequest } from "@/lib/clientApi";
+import { login, LoginRequest } from "../../../lib/api/clientApi";
 import css from "./SignInPage.module.css";
 const SignIn = () => {
   const router = useRouter();

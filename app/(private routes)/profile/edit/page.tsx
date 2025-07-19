@@ -2,7 +2,7 @@
 import css from "./EditProfilePage.module.css";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { updateMe, getMe } from "../../../../lib/clientApi";
+import { updateMe, getMe } from "../../../../lib/api/clientApi";
 import { useRouter } from "next/navigation";
 
 const EditProfile = () => {

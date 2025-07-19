@@ -1,6 +1,6 @@
 
 import NotesClient from './NotesClient';
-import { getNotes } from '@/lib/api';
+import { getNotes } from '../../../../../lib/api/api';
 import { Metadata } from "next";
 import { Tag } from '@/types/note';
 
