@@ -2,7 +2,7 @@ export type Tag ="Todo" | "Work" | "Personal" | "Meeting" | "Shopping";
 
 export interface Note {
   tag: Tag;
-  id: number;
+  id: string;
   title: string;
   content: string;
   createdAt: string;

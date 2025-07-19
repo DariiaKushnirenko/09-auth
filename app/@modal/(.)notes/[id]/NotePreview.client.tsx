@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import css from "./NorePreview.module.css";
 
 interface NotePreviewClientProps {
-    id: number;
+    id: string;
 }
 
 export default function NotePreviewClient({ id }: NotePreviewClientProps) {
