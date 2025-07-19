@@ -42,7 +42,6 @@ export const getMe = async () => {
 
 export type UpdateUserRequest = {
   username?: string;
-  photoUrl?: string;
 };
 
 export const updateMe = async (payload: UpdateUserRequest) => {
@@ -74,7 +73,7 @@ export const getNotes = async ({
   return response.data;
 };
 
-export const fetchNoteById = async (noteId: number): Promise<Note> => {
+export const fetchNoteById = async (noteId: string): Promise<Note> => {
   const response = await nextServer.get<Note>(`/notes/${noteId}`);
   return response.data;
 };
@@ -84,7 +83,7 @@ export const createNote = async (noteData: NewNoteData): Promise<Note> => {
   return response.data;
 };
 
-export const deleteNote = async (noteId: number): Promise<Note> => {
+export const deleteNote = async (noteId: string): Promise<Note> => {
   const response = await nextServer.delete(`/notes/${noteId}`);
   return response.data;
 };
