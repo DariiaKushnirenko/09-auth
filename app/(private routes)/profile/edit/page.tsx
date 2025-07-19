@@ -4,15 +4,18 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { updateMe, getMe } from "../../../../lib/api/clientApi";
 import { useRouter } from "next/navigation";
+import { useAuthStore } from "../../../../lib/store/authStore";
+
 
 const EditProfile = () => {
   const router = useRouter();
-  const [userName, setUserName] = useState("");
+   const setUser = useAuthStore((state) => state.setUser);
+  const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
 
   useEffect(() => {
     getMe().then((user) => {
-      setUserName(user.userName ?? "");
+      setUserName(user.username ?? "");
       setEmail(user.email ?? "");
     });
   }, []);
@@ -23,7 +26,9 @@ const EditProfile = () => {
 
   const handleSaveUser = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    await updateMe({ userName });
+   const updatedUser = await updateMe({ username });
+    setUser(updatedUser);
+
     router.push("/profile");
   };
   const handleCancel = () => {
@@ -43,10 +48,10 @@ const EditProfile = () => {
         />
         <form onSubmit={handleSaveUser} className={css.profileInfo}>
           <div className={css.usernameWrapper}>
-            <label htmlFor="username">Username: {userName}</label>
+            <label htmlFor="username">Username: {username}</label>
             <input
               type="text"
-              value={userName}
+              value={username}
               onChange={handleChange}
               className={css.input}
             />

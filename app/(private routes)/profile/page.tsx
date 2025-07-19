@@ -3,6 +3,11 @@ import { getServerMe } from "../../../lib/api/serverApi";
 import css from "./ProfilePage.module.css";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Profile",
+  description: "User profile page",
+};
+
 const Profile = async () => {
   const user = await getServerMe();
   return (
@@ -18,7 +23,7 @@ const Profile = async () => {
           </div>
           <div className={css.avatarWrapper}>
             <Image
-              src="Avatar"
+              src="{user.avatar}"
               alt="User Avatar"
               width={120}
               height={120}
@@ -26,7 +31,7 @@ const Profile = async () => {
             />
           </div>
           <div className={css.profileInfo}>
-            <p>Name: {user.userName}</p>
+            <p>Name: {user.username}</p>
             <p>Email: {user.email}</p>
           </div>
         </div>
