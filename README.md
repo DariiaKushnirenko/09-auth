@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Projects
 
-## Getting Started
+![HTML5 Badge](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) 
+![CSS3 Badge](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) 
+![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![React Badge](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Next.js Badge](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
 
-First, run the development server:
+Welcome to my frontend development portfolio, showcasing selected team projects built with HTML, CSS, JavaScript, and APIs. Each project reflects my commitment to clean, maintainable code and responsive design.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Featured Projects
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 📘 Portfolio 2.0  
+**Live:** [https://tms-zngs.github.io/js-team-17/](https://tms-zngs.github.io/js-team-17/)  
+**Code:** [GitHub Repository](https://github.com/tms-zngs/js-team-17)  
+**Tech Stack:** HTML, CSS, JavaScript, API  
+**Type:** Team Project  
+**Role:** Developer — *Work Together* section
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+> A responsive and interactive personal portfolio with real-time search functionality and dynamic content powered by an API. Built to demonstrate core frontend skills and provide a user-friendly experience.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+### ⌚ WatchCharm  
+**Live:** [https://mavrinv.github.io/team-eighteen/](https://mavrinv.github.io/team-eighteen/)  
+**Code:** [GitHub Repository](https://github.com/MavrinV/team-eighteen)  
+**Tech Stack:** HTML, CSS  
+**Type:** Team Project  
+**Role:** Developer — *Contact Us* section
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> A modern, adaptive catalog site for a luxury watch brand. Designed with clean UI, customer testimonials, and interactive elements to deliver a smooth shopping experience.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🧩 About Me
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+I’m a frontend developer passionate about creating intuitive and responsive interfaces. I thrive in team environments and take ownership of my work. My current focus is building real-world projects while deepening my skills in modern web development.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📬 Contact
+
+Feel free to connect if you’re interested in collaboration or want to say hello.
